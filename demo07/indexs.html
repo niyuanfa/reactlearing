@@ -2,31 +2,30 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
     <script src="../build/react.js"></script>
     <script src="../build/react-dom.js"></script>
     <script src="../build/browser.min.js"></script>
 </head>
-
 <body>
 <div id="example"></div>
 <script type="text/babel">
-var myCommponent=React.createClass({
-    handleclick:function () {
-        this.ref.myTextInput.focus();
+var MyCommponent = React.createClass({
+    handleClick:function () {
+        this.refs.myTextInput.focus();
     },
-    render:function(){
-        return 
+    render: function(){
+     return (
         <div>
-        <input  type="text" ref="myTextInput"/>
-        <input  type="button" value="Focus the text input" onclick={this.handleclick()}/>
+         <input  type="text" ref="myTextInput"/>
+         <input  type="button" value="Focus the text input" onClick={this.handleClick}/>
         </div>
+        );
     }
 });
-ReactDom.render(
-   <myCommponent/>,
-   document.getElementByID("example")
-)
+ReactDOM.render(
+   <MyCommponent/>,
+   document.getElementById("example")
+);
 </script>
 </body>
 
